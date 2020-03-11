@@ -43,7 +43,7 @@ parser = optparse.OptionParser()
 
 parser.add_option("-f", "--ip_forward", dest="set_ip_forwarding", help="Put 'True' to add ip forwarding")
 parser.add_option("-t", "--target_ip", dest="target_ip", help="Set target ip to get MITM")
-parser.add_option("-g", "--gateway_ip", dest="gateway_ip", help="Put 'Set gateway ip to get MITM")
+parser.add_option("-g", "--gateway_ip", dest="gateway_ip", help="Set gateway ip to get MITM")
 (options, arguments)= parser.parse_args()
 
 set_ip_forwarding = options.set_ip_forwarding

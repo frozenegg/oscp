@@ -1,6 +1,6 @@
 #!/user/bin/python
 
-import subprocess, smtplib. re
+import subprocess, smtplib, re
 
 # command = "msg * you have been hacked"
 # subprocess.Popen(command, shell=True)
