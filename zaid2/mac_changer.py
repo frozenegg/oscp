@@ -2,6 +2,7 @@
 
 import subprocess
 import optparse
+# or aptparse (ArgumentParser instead of OptionParser)
 import re
 
 parser = optparse.OptionParser()
