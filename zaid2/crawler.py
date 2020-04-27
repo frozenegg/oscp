@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import requests
+import re
 
 def request(url):
     try:
