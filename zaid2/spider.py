@@ -4,11 +4,11 @@ import requests
 import re
 import urlparse
 
-target_url = "https://kyoto-u.ac.jp"
+target_url = "http://192.168.2.114/mutillidae/"
 target_links = []
 
 def extract_links_from(url):
-    response = requests.get(target_url)
+    response = requests.get(url)
     return re.findall('(?:href=")(.*?)"', response.content)
 
 def crawl(url):
@@ -24,4 +24,4 @@ def crawl(url):
             print(link)
             crawl(link)
 
-crawl(target)
+crawl(target_url)

@@ -2,7 +2,7 @@
 
 import requests
 
-target_url = ""
+target_url = "" # use action url in full path 
 data = {"username": "", "password": "", "Login": "submit"}
 response = requests.post(target_url, data = data)
 print(response.content)
