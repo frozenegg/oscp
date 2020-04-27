@@ -27,7 +27,7 @@ def process_packet(packet):
             # this time, "</body>" appears once
 
             content_length_search = re.search("(?:Content-Length:\s)(\d*)", load)
-            # check pythex
+            # check pythex (regex for re)
             # \d* for the whole number
             if content_length_search and "text/html" in scapy_packet[scapy.Raw].load:
                 # second part needed to only modify html codes due to </body> part
